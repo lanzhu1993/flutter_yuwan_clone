@@ -5,6 +5,11 @@ import 'package:yuwan/res/string_res.dart';
 import 'package:yuwan/utils/screen_adapter.dart';
 import 'package:yuwan/widget/svga_widget.dart';
 
+import '../../res/color_res.dart';
+import '../../res/string_res.dart';
+import '../../utils/screen_adapter.dart';
+import '../../widget/menu_button.dart';
+
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -13,6 +18,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController _phoneController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+
+  bool _mLoginEnable = false;
+  bool _mAgreeMentEnable = true;
 
   @override
   void initState() {
@@ -26,22 +34,89 @@ class _LoginPageState extends State<LoginPage> {
         value: SystemUiOverlayStyle.dark,
         child: Scaffold(
           backgroundColor: ColorRes.colorGrayBackground,
-          body: Container(
-            color: ColorRes.colorGrayBackground,
-            child: Stack(
-              children: <Widget>[_buildLoginFrame(), _buildBottomWidget()],
-            ),
+          body: SingleChildScrollView(
+            child: _buildMenu(),
           ),
         ));
   }
 
+  Widget _buildMenu() {
+    return Container(
+      color: ColorRes.colorGrayBackground,
+      child: Column(
+        children: <Widget>[_buildLoginFrame(), _buildBottomWidget()],
+      ),
+    );
+  }
+
   Widget _buildBottomWidget() {
-    return Positioned(
-      bottom: ScreenAdapter.height(0),
-      width: ScreenAdapter.width(350),
-      height: ScreenAdapter.height(90),
-      child: Container(
-        color: Colors.green,
+    return Container(
+      margin: EdgeInsets.only(top: ScreenAdapter.height(160)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: ScreenAdapter.width(100)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  StringRes.forgetPassword,
+                  style: TextStyle(
+                      color: ColorRes.colorPink,
+                      fontSize: ScreenAdapter.size(16)),
+                ),
+                Container(
+                  width: ScreenAdapter.width(1),
+                  height: ScreenAdapter.height(10),
+                  color: ColorRes.colorNormal,
+                ),
+                Text(
+                  StringRes.newSignUp,
+                  style: TextStyle(
+                      color: ColorRes.colorPink,
+                      fontSize: ScreenAdapter.size(16)),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(ScreenAdapter.width(60),
+                ScreenAdapter.width(10), ScreenAdapter.width(60), 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                InkWell(
+                  child: Image.asset(
+                    _mAgreeMentEnable
+                        ? "assets/images/agreement_radio_checked.png"
+                        : "assets/images/agreement_radio_disable_checked.png",
+                    width: ScreenAdapter.width(12),
+                  ),
+                  onTap: () {
+                    setState(() {
+                      _mAgreeMentEnable = !_mAgreeMentEnable;
+                    });
+                  },
+                ),
+                Text(
+                  StringRes.scanAgreement,
+                  style: TextStyle(
+                      color: ColorRes.colorDark,
+                      fontSize: ScreenAdapter.size(12)),
+                ),
+                Text(
+                  StringRes.userPrivacyAgreement,
+                  style: TextStyle(
+                      color: ColorRes.colorPink,
+                      fontSize: ScreenAdapter.size(12)),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
@@ -55,7 +130,8 @@ class _LoginPageState extends State<LoginPage> {
       child: Column(
         children: <Widget>[
           Container(
-            margin: EdgeInsets.fromLTRB(0,ScreenAdapter.height(80),0,ScreenAdapter.height(40)),
+            margin: EdgeInsets.fromLTRB(
+                0, ScreenAdapter.height(80), 0, ScreenAdapter.height(40)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -71,6 +147,14 @@ class _LoginPageState extends State<LoginPage> {
           ),
           _buildInputWidget(
               _passwordController, StringRes.inputPassword, TextInputType.text),
+          SizedBox(
+            height: ScreenAdapter.height(20.0),
+          ),
+          _buildLoginButton(),
+          SizedBox(
+            height: ScreenAdapter.height(20.0),
+          ),
+          _buildRegisterPhone(),
         ],
       ),
     );
@@ -79,9 +163,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget _buildInputWidget(
       TextEditingController controller, String hintText, TextInputType type) {
     return Container(
-      margin: EdgeInsets.fromLTRB(ScreenAdapter.width(40),
-          0, ScreenAdapter.width(40), 0),
-      height: ScreenAdapter.height(60.0),
+      margin: EdgeInsets.fromLTRB(
+          ScreenAdapter.width(40), 0, ScreenAdapter.width(40), 0),
+      height: ScreenAdapter.height(46.0),
       child: TextField(
         autofocus: false,
         cursorColor: ColorRes.colorNormal,
@@ -90,7 +174,7 @@ class _LoginPageState extends State<LoginPage> {
         maxLines: 1,
         textAlign: TextAlign.center,
         style: TextStyle(
-            fontSize: ScreenAdapter.size(15), color: ColorRes.colorDark),
+            fontSize: ScreenAdapter.size(16), color: ColorRes.colorDark),
         maxLength: 8,
         decoration: InputDecoration(
           fillColor: Colors.white,
@@ -98,14 +182,38 @@ class _LoginPageState extends State<LoginPage> {
           hintText: hintText,
           counterText: "",
           hintStyle: TextStyle(
-              fontSize: ScreenAdapter.size(15), color: ColorRes.colorHint),
-          contentPadding: EdgeInsets.only(left: ScreenAdapter.width(10), top: ScreenAdapter.height(10)),
+              fontSize: ScreenAdapter.size(16), color: ColorRes.colorHint),
+          contentPadding: EdgeInsets.symmetric(
+            vertical: ScreenAdapter.height(10),
+          ),
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(30.0), //这个不生效
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildLoginButton() {
+    return GradientMenuButton(
+      label: StringRes.login,
+      enable: _mLoginEnable,
+      gradientStart: ColorRes.colorStart,
+      gradientEnd: ColorRes.colorEnd,
+    );
+  }
+
+  Widget _buildRegisterPhone() {
+    return SimpleImageButton(
+      normalImage: "assets/images/login_register_icon_normal.png",
+      pressedImage: "assets/images/login_register_icon_pressed.png",
+      width: ScreenAdapter.width(40),
+      onPressed: () {
+        setState(() {
+          _mLoginEnable = !_mLoginEnable;
+        });
+      },
     );
   }
 }

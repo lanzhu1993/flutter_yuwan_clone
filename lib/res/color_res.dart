@@ -13,4 +13,11 @@ class ColorRes{
 
   static Color colorHint = Color(0xff808080);
 
+  static Color colorStart = Color(0xffA87FFD);
+
+  static Color colorEnd = Color(0xffDD8DFE);
+
+  static Color colorPink = Color(0xffD590F7);
+
+
 }
