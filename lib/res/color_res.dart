@@ -9,6 +9,8 @@ class ColorRes{
 
   static Color colorDark = Color(0xff333333);
 
+  static Color colorGrayBackground = Color(0xfff5f5f5);
 
-  static Color colorGrayBackground = Color(0xfff9f9f9);
+  static Color colorHint = Color(0xff808080);
+
 }
