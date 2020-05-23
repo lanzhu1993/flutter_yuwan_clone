@@ -1,0 +1,20 @@
+import 'package:fluro/fluro.dart';
+import 'package:flutter/material.dart';
+import 'package:yuwan/routers/router_hancler.dart';
+
+class Routes {
+
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+
+  static String loginPage = '/loginPage';
+
+  static void configureRoutes(Router router) {
+    router.notFoundHandler = new Handler(
+        handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+          print('route not found!');
+          return Container();
+        });
+
+    router.define(loginPage, handler: loginPageHandler);
+  }
+}
