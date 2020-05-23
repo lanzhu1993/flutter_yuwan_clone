@@ -18,11 +18,8 @@
 目前项目才开始搭建，后期会持续更新...
 
 #### 登录模块UI：
-<figure class="half">
-    <img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/login.jpeg">
-    <img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/splash.jpeg">
-</figure>
 
+| ![](./blob/master/screenshot/login/splash.jpeg)    |  ![](./blob/master/screenshot/login/login.jpeg)    |
 
 感觉有帮助的话就给个start吧，我会持续更新完善这个项目！
 
