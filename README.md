@@ -20,7 +20,7 @@
 #### 登录模块UI：
 
 <img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/splash.jpeg" width=200 height=450/><img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/login.jpeg" width=200 height=450/>
-<img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/register.jpeg" width=200 height=450/><img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/verify.jpeg" width=200 height=450/>
+<img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/register.jpg" width=200 height=450/><img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/verify.jpg" width=200 height=450/>
 
 
 感觉有帮助的话就给个start吧，我会持续更新完善这个项目！
