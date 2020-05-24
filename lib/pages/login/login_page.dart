@@ -178,6 +178,9 @@ class _LoginPageState extends State<LoginPage> {
       enable: _mLoginEnable,
       gradientStart: ColorRes.colorStart,
       gradientEnd: ColorRes.colorEnd,
+      onPressed: (){
+        NavigatorUtil.replaceJumpUrl(context, Routers.indexPage);
+      },
     );
   }
 

@@ -31,6 +31,8 @@ class StringRes {
 
   static String againSend = "重新发送";
 
+  static List<String> bottomBarTitles = ["房间","动态","发现","消息","我"];
+
 
 
 }

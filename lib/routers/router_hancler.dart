@@ -1,5 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:yuwan/pages/index/index_page.dart';
 import 'package:yuwan/pages/login/login_page.dart';
 import 'package:yuwan/pages/login/register_page.dart';
 import 'package:yuwan/pages/login/verify_page.dart';
@@ -19,4 +20,10 @@ var verifyPageHandler = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
       return VerifyPage();
     });
+
+var indexPageHandler = new Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+      return IndexPage();
+    });
+
 

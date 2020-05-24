@@ -36,6 +36,7 @@ dependencies:
   oktoast: ^2.3.2
   flutter_screenutil: ^1.1.0
   svgaplayer_flutter: ^1.1.0
+  pull_to_refresh: ^1.5.8
 
 dev_dependencies:
   flutter_test:

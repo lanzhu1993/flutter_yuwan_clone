@@ -12,6 +12,8 @@ class Routers {
 
   static String registerPage = '/registerPage';
 
+  static String indexPage = '/indexPage';
+
 
   static void configureRoutes(Router router) {
     router.notFoundHandler = new Handler(
@@ -25,6 +27,8 @@ class Routers {
     router.define(verifyPage, handler: verifyPageHandler);
 
     router.define(registerPage, handler: registerPageHandler);
+
+    router.define(indexPage, handler: indexPageHandler);
 
   }
 }
