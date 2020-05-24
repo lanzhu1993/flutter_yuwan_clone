@@ -36,12 +36,12 @@ class YuWanApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final router = Router();
-    Routes.configureRoutes(router);
+    Routers.configureRoutes(router);
     Application.router = router;
 
     return OKToast(
         child: MaterialApp(
-          navigatorKey: Routes.navigatorKey,
+          navigatorKey: Routers.navigatorKey,
           title: "",
           theme: ThemeData(primaryColor: Colors.white),
           onGenerateRoute: Application.router.generator,

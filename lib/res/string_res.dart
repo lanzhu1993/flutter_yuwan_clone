@@ -14,4 +14,23 @@ class StringRes {
   static String scanAgreement = "我已阅读并同意";
 
   static String userPrivacyAgreement = "《用户协议及隐私政策》";
+
+  static String back = "返回";
+
+  static String inputPhone = "请输入手机号";
+
+  static String getVerifyCode = "获取验证码";
+
+  static String register = "注册/登录";
+
+  static String inputVerifyCode = "填写验证码";
+
+  static String sendSmsTo = "短信已发送至";
+
+  static String afterSecondSend = "秒后发送";
+
+  static String againSend = "重新发送";
+
+
+
 }

@@ -20,6 +20,7 @@
 #### 登录模块UI：
 
 <img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/splash.jpeg" width=200 height=450/><img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/login.jpeg" width=200 height=450/>
+<img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/register.jpeg" width=200 height=450/><img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/verify.jpeg" width=200 height=450/>
 
 
 感觉有帮助的话就给个start吧，我会持续更新完善这个项目！
@@ -45,5 +46,6 @@ Tools • Dart 2.8.1
 [oktoast](https://pub.dev/packages/oktoast) |  弹窗提示  | 2.3.2
 [flutter_screenutil](https://pub.dev/packages/flutter_screenutil) |  屏幕适配  | 1.1.0
 [svgaplayer_flutter](https://pub.dev/packages/svgaplayer_flutter) |  svga动画播放  | 1.1.0
+
 
 

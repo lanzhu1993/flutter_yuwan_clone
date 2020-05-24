@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yuwan/utils/screen_adapter.dart';
 
-import '../res/color_res.dart';
-import '../utils/screen_adapter.dart';
+import 'package:yuwan/res/color_res.dart';
+import 'package:yuwan/utils/screen_adapter.dart';
 
 class GradientMenuButton extends StatefulWidget {
   GradientMenuButton(
@@ -47,7 +47,8 @@ class _GradientMenuButtonState extends State<GradientMenuButton> {
           child: Text(
             widget.label,
             style: TextStyle(
-                color: ColorRes.colorWhite, fontSize: ScreenAdapter.size(18)),
+                color: ColorRes.colorWhite,
+                fontSize: ScreenAdapter.size(18)),
           ),
         ),
       ),

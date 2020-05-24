@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:yuwan/res/color_res.dart';
 import 'package:yuwan/res/string_res.dart';
+import 'package:yuwan/routers/navigator.dart';
+import 'package:yuwan/routers/routes.dart';
 import 'package:yuwan/utils/screen_adapter.dart';
+import 'package:yuwan/widget/privacy_widget.dart';
 import 'package:yuwan/widget/svga_widget.dart';
-
-import '../../res/color_res.dart';
-import '../../res/string_res.dart';
-import '../../utils/screen_adapter.dart';
-import '../../widget/menu_button.dart';
+import 'package:yuwan/widget/menu_button.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -20,7 +19,6 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController _passwordController = TextEditingController();
 
   bool _mLoginEnable = false;
-  bool _mAgreeMentEnable = true;
 
   @override
   void initState() {
@@ -42,7 +40,6 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildMenu() {
     return Container(
-      color: ColorRes.colorGrayBackground,
       child: Column(
         children: <Widget>[_buildLoginFrame(), _buildBottomWidget()],
       ),
@@ -61,61 +58,41 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  StringRes.forgetPassword,
-                  style: TextStyle(
-                      color: ColorRes.colorPink,
-                      fontSize: ScreenAdapter.size(16)),
+                InkWell(
+                  child: Text(
+                    StringRes.forgetPassword,
+                    style: TextStyle(
+                        color: ColorRes.colorPink,
+                        fontSize: ScreenAdapter.size(16)),
+                  ),
+                  onTap: () {
+                    var title = StringRes.register;
+                    NavigatorUtil.goJumpUrl(context,
+                        '${Routers.registerPage}?title=${Uri.encodeComponent(title)}');
+                  },
                 ),
                 Container(
                   width: ScreenAdapter.width(1),
                   height: ScreenAdapter.height(10),
                   color: ColorRes.colorNormal,
                 ),
-                Text(
-                  StringRes.newSignUp,
-                  style: TextStyle(
-                      color: ColorRes.colorPink,
-                      fontSize: ScreenAdapter.size(16)),
+                InkWell(
+                  child: Text(
+                    StringRes.newSignUp,
+                    style: TextStyle(
+                        color: ColorRes.colorPink,
+                        fontSize: ScreenAdapter.size(16)),
+                  ),
+                  onTap: () {
+                    var title = StringRes.register;
+                    NavigatorUtil.goJumpUrl(context,
+                        '${Routers.registerPage}?title=${Uri.encodeComponent(title)}');
+                  },
                 ),
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.fromLTRB(ScreenAdapter.width(60),
-                ScreenAdapter.width(10), ScreenAdapter.width(60), 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                InkWell(
-                  child: Image.asset(
-                    _mAgreeMentEnable
-                        ? "assets/images/agreement_radio_checked.png"
-                        : "assets/images/agreement_radio_disable_checked.png",
-                    width: ScreenAdapter.width(12),
-                  ),
-                  onTap: () {
-                    setState(() {
-                      _mAgreeMentEnable = !_mAgreeMentEnable;
-                    });
-                  },
-                ),
-                Text(
-                  StringRes.scanAgreement,
-                  style: TextStyle(
-                      color: ColorRes.colorDark,
-                      fontSize: ScreenAdapter.size(12)),
-                ),
-                Text(
-                  StringRes.userPrivacyAgreement,
-                  style: TextStyle(
-                      color: ColorRes.colorPink,
-                      fontSize: ScreenAdapter.size(12)),
-                ),
-              ],
-            ),
-          )
+          PrivacyWidget()
         ],
       ),
     );
