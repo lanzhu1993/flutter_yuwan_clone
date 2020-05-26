@@ -1,0 +1,28 @@
+PODS:
+  - assets_audio_player (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - svgaplayer_flutter (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - assets_audio_player (from `.symlinks/plugins/assets_audio_player/ios`)
+  - Flutter (from `Flutter`)
+  - svgaplayer_flutter (from `.symlinks/plugins/svgaplayer_flutter/ios`)
+
+EXTERNAL SOURCES:
+  assets_audio_player:
+    :path: ".symlinks/plugins/assets_audio_player/ios"
+  Flutter:
+    :path: Flutter
+  svgaplayer_flutter:
+    :path: ".symlinks/plugins/svgaplayer_flutter/ios"
+
+SPEC CHECKSUMS:
+  assets_audio_player: 828c5761d1e51c569f40e622db3a2cbfd61ecb7d
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  svgaplayer_flutter: 54a6973be40a849244ba02fdffcba9094f10f68f
+
+PODFILE CHECKSUM: c34e2287a9ccaa606aeceab922830efb9a6ff69a
+
+COCOAPODS: 1.8.4
