@@ -19,5 +19,7 @@ class ColorRes{
 
   static Color colorPink = Color(0xffD590F7);
 
+  static Color colorBlackTransparent = Color(0x66000000);
+
 
 }

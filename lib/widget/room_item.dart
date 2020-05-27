@@ -32,6 +32,12 @@ class RoomItemWidget extends StatelessWidget {
             ),
           ),
           Positioned(
+            top: ScreenAdapter.height(5),
+            left: ScreenAdapter.width(10),
+            child: _buildRoomTypeNumberWidget(
+                entity.roomType, entity.roomNumber),
+          ),
+          Positioned(
             right: ScreenAdapter.width(10),
             top: ScreenAdapter.height(185),
             child: Container(
@@ -39,10 +45,18 @@ class RoomItemWidget extends StatelessWidget {
               height: ScreenAdapter.height(30),
               child: Stack(
                 children: <Widget>[
-                  CircleAvatar(
-                    backgroundImage: NetworkImage(
-                      entity.userAvater,
+                  Container(
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                        entity.userAvater,
+                      ),
                     ),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                            Radius.circular(ScreenAdapter.width(15))),
+                        border: Border.all(
+                            width: ScreenAdapter.width(1),
+                            color: ColorRes.colorWhite)),
                   ),
                   Positioned(
                     right: 0,
@@ -107,6 +121,70 @@ class RoomItemWidget extends StatelessWidget {
         return Image.asset(
           "assets/images/icon_room_tag_self.png",
           width: ScreenAdapter.width(26),
+        );
+    }
+  }
+
+  Widget _buildRoomTypeNumberWidget(int roomType, int members) {
+    return Container(
+      width: ScreenAdapter.width(60),
+      height: ScreenAdapter.height(20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          _buildRoomTypeImage(roomType),
+          Text(
+            "$members 人",
+            style: TextStyle(
+                color: ColorRes.colorWhite, fontSize: ScreenAdapter.size(10)),
+          ),
+        ],
+      ),
+      decoration: BoxDecoration(
+        color: ColorRes.colorBlackTransparent,
+        borderRadius:
+            BorderRadius.all(Radius.circular(ScreenAdapter.width(10))),
+      ),
+    );
+  }
+
+  Widget _buildRoomTypeImage(int roomType) {
+    switch (roomType) {
+      case 1:
+        return Image.asset(
+          "assets/images/icon_chat_room_grid_list_default.png",
+          width: ScreenAdapter.width(14),
+        );
+      case 2:
+        return Image.asset(
+          "assets/images/icon_chat_room_grid_list_music.png",
+          width: ScreenAdapter.width(14),
+        );
+      case 3:
+        return Image.asset(
+          "assets/images/icon_chat_room_grid_list_praise.png",
+          width: ScreenAdapter.width(14),
+        );
+      case 4:
+        return Image.asset(
+          "assets/images/icon_chat_room_grid_list_scrawl.png",
+          width: ScreenAdapter.width(14),
+        );
+      case 5:
+        return Image.asset(
+          "assets/images/icon_chat_room_grid_list_video.png",
+          width: ScreenAdapter.width(14),
+        );
+      case 6:
+        return Image.asset(
+          "assets/images/icon_chat_room_grid_list_video_movie.png",
+          width: ScreenAdapter.width(14),
+        );
+      case 7:
+        return Image.asset(
+          "assets/images/icon_chat_room_grid_list_video_share_screen.png",
+          width: ScreenAdapter.width(14),
         );
     }
   }
