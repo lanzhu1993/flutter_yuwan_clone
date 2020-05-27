@@ -33,6 +33,11 @@ class StringRes {
 
   static List<String> bottomBarTitles = ["房间","动态","发现","消息","我"];
 
+  static String  downRefresh = "下拉刷新";
+
+  static String  releaseRefresh = "松开刷新";
+
+  static String  completeRefresh = "刷新完成";
 
 
 }

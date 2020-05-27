@@ -17,6 +17,9 @@ class RoomItemWidget extends StatelessWidget {
       child: Stack(
         children: <Widget>[
           Container(
+            height: ScreenAdapter.height(246),
+          ),
+          Container(
             height: ScreenAdapter.height(200),
             decoration: BoxDecoration(
               color: ColorRes.colorWhite,
