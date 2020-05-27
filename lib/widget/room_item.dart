@@ -34,8 +34,8 @@ class RoomItemWidget extends StatelessWidget {
           Positioned(
             top: ScreenAdapter.height(5),
             left: ScreenAdapter.width(10),
-            child: _buildRoomTypeNumberWidget(
-                entity.roomType, entity.roomNumber),
+            child:
+                _buildRoomTypeNumberWidget(entity.roomType, entity.roomNumber),
           ),
           Positioned(
             right: ScreenAdapter.width(10),
@@ -79,6 +79,60 @@ class RoomItemWidget extends StatelessWidget {
             top: 0,
             right: ScreenAdapter.width(10),
             child: _buildRoomMarkImage(entity.roomType),
+          ),
+          Positioned(
+            bottom: ScreenAdapter.height(8),
+            left: ScreenAdapter.width(10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  entity.roomDesc,
+                  style: TextStyle(
+                      color: ColorRes.colorDark,
+                      fontSize: ScreenAdapter.size(14)),
+                  maxLines: 1,
+
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    entity.roomMark.isNotEmpty
+                        ? Container(
+                            decoration: BoxDecoration(
+                                color: ColorRes.colorWhite,
+                                borderRadius: BorderRadius.all(
+                                    Radius.circular(ScreenAdapter.width(10))),
+                                border: Border.all(
+                                    color: ColorRes.colorPink,
+                                    width: ScreenAdapter.width(1))),
+                            padding: EdgeInsets.fromLTRB(
+                                ScreenAdapter.width(6),
+                                ScreenAdapter.width(0),
+                                ScreenAdapter.width(6),
+                                ScreenAdapter.width(0)),
+                            child: Text(
+                              entity.roomMark,
+                              maxLines: 1,
+                              style: TextStyle(
+                                  color: ColorRes.colorPink,
+                                  fontSize: ScreenAdapter.size(8)),
+                            ),
+                          )
+                        : Container(),
+                    Text(
+                      entity.typeDesc,
+                      maxLines: 1,
+                      style: TextStyle(
+                          color: ColorRes.colorNormal,
+                          fontSize: ScreenAdapter.size(10)),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ],
       ),
