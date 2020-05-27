@@ -27,7 +27,7 @@ class _MinePageState extends State<MinePage> {
   Widget _buildMineMenu() {
     return Column(
       children: <Widget>[
-        MineMenuWidget(icon:"assets/images/icon_me_task.png",title: StringRes.mineCoins,content: "",),
+        MineMenuWidget(icon:"assets/images/icon_me_task.png",title: StringRes.mineCoins,content: "213",),
         MineMenuWidget(icon:"assets/images/icon_me_coin.png",title: StringRes.mineBy,content: "",),
         MineMenuWidget(icon:"assets/images/icon_me_item_vip.png",title: StringRes.mineVIP,content: "",),
         MineMenuWidget(icon:"assets/images/icon_me_ornament.png",title: StringRes.minePacket,content: "",),

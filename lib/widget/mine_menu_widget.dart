@@ -17,14 +17,18 @@ class MineMenuWidget extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: ScreenAdapter.width(10)),
         height: ScreenAdapter.height(42),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Image.asset(
-              icon,
-              width: ScreenAdapter.width(24),
+            Container(
+                margin: EdgeInsets.only(right: ScreenAdapter.width(10)),
+                child: Image.asset(
+                  icon,
+                  width: ScreenAdapter.width(24),
+                ),
             ),
-            Flexible(
+
+            Expanded(
               flex: 1,
               child: Text(
                 title,
@@ -36,6 +40,7 @@ class MineMenuWidget extends StatelessWidget {
             ),
             Text(
               content,
+              textAlign: TextAlign.end,
               style: TextStyle(
                   color: ColorRes.colorNormal,
                   fontSize: ScreenAdapter.size(14)),
