@@ -39,5 +39,13 @@ class StringRes {
 
   static String  completeRefresh = "刷新完成";
 
+  static String  mineCoins = "赚金币";
+  static String  mineBy = "充值";
+  static String  mineVIP = "会员中心";
+  static String  minePacket = "个性装扮";
+  static String  mineInvitate = "师徒";
+  static String  mineFoot = "足迹";
+  static String  mineSetting = "设置";
+
 
 }

@@ -6,6 +6,7 @@ import 'package:yuwan/pages/home/nearby_page.dart';
 import 'package:yuwan/pages/home/recommend_page.dart';
 import 'package:yuwan/pages/home/video_page.dart';
 import 'package:yuwan/pages/index/test_page.dart';
+import 'package:yuwan/pages/mine/mine_page.dart';
 import 'package:yuwan/utils/screen_adapter.dart';
 
 List<Widget> getIndexPages() {
@@ -14,7 +15,7 @@ List<Widget> getIndexPages() {
     TestPage(),
     TestPage(),
     TestPage(),
-    TestPage(),
+    MinePage(),
 
   ];
   return pages;
