@@ -11,7 +11,7 @@ class RoomItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Card(
+    return Card(
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(5.0))),
       child: Stack(
@@ -19,12 +19,46 @@ class RoomItemWidget extends StatelessWidget {
           Container(
             height: ScreenAdapter.height(200),
             decoration: BoxDecoration(
-                color: ColorRes.colorWhite,
-                borderRadius: BorderRadius.circular(ScreenAdapter.width(5)),
+              color: ColorRes.colorWhite,
+              borderRadius: BorderRadius.circular(ScreenAdapter.width(5)),
             ),
-            child: CachedNetworkImage(
-              imageUrl: entity.roomBg,
-              fit: BoxFit.fill,
+            child: ClipRRect(
+              borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(ScreenAdapter.width(5))),
+              child: CachedNetworkImage(
+                imageUrl: entity.roomBg,
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          Positioned(
+            right: ScreenAdapter.width(10),
+            top: ScreenAdapter.height(185),
+            child: Container(
+              width: ScreenAdapter.width(30),
+              height: ScreenAdapter.height(30),
+              child: Stack(
+                children: <Widget>[
+                  CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      entity.userAvater,
+                    ),
+                  ),
+                  Positioned(
+                    right: 0,
+                    bottom: 0,
+                    child: entity.gender == 1
+                        ? Image.asset(
+                            "assets/images/room_new_male.png",
+                            width: ScreenAdapter.width(10),
+                          )
+                        : Image.asset(
+                            "assets/images/room_new_female.png",
+                            width: ScreenAdapter.width(10),
+                          ),
+                  )
+                ],
+              ),
             ),
           ),
           Positioned(
