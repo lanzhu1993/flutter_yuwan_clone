@@ -23,6 +23,10 @@
 <img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/register.jpg" width=200 height=450/><img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/login/verify.jpg" width=200 height=450/>
 
 
+#### 房间模块UI：
+
+<img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot//room/room.jpg" width=200 height=450/>
+
 感觉有帮助的话就给个start吧，我会持续更新完善这个项目！
 
 
@@ -46,6 +50,10 @@ Tools • Dart 2.8.1
 [oktoast](https://pub.dev/packages/oktoast) |  弹窗提示  | 2.3.2
 [flutter_screenutil](https://pub.dev/packages/flutter_screenutil) |  屏幕适配  | 1.1.0
 [svgaplayer_flutter](https://pub.dev/packages/svgaplayer_flutter) |  svga动画播放  | 1.1.0
+[pull_to_refresh](https://pub.dev/packages/pull_to_refresh) |  下拉刷新  | 1.5.8
+[cached_network_image](https://pub.dev/packages?q=cached_network_image) |  网络缓存加载图片  | 2.2.0+1
+[flutter_staggered_grid_view](https://pub.dev/packages/flutter_staggered_grid_view) |  列表网格显示  | 1.1.0
+
 
 
 
