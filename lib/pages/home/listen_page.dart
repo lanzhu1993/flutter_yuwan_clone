@@ -16,7 +16,7 @@ class ListenPage extends StatefulWidget {
   _ListenPageState createState() => _ListenPageState();
 }
 
-class _ListenPageState extends State<ListenPage> {
+class _ListenPageState extends State<ListenPage> with AutomaticKeepAliveClientMixin{
   RefreshController _refreshController;
 
   List<RoomInfoEntity> items = [];
@@ -99,4 +99,8 @@ class _ListenPageState extends State<ListenPage> {
           ),
         ));
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yuwan/pages/home/company_page.dart';
+import 'package:yuwan/pages/find/find_page.dart';
 import 'package:yuwan/pages/home/home_page.dart';
-import 'package:yuwan/pages/home/listen_page.dart';
-import 'package:yuwan/pages/home/nearby_page.dart';
-import 'package:yuwan/pages/home/recommend_page.dart';
-import 'package:yuwan/pages/home/video_page.dart';
 import 'package:yuwan/pages/index/test_page.dart';
 import 'package:yuwan/pages/mine/mine_page.dart';
 import 'package:yuwan/utils/screen_adapter.dart';
@@ -13,10 +9,9 @@ List<Widget> getIndexPages() {
   var pages = [
     HomePage(),
     TestPage(),
-    TestPage(),
+    FindPage(),
     TestPage(),
     MinePage(),
-
   ];
   return pages;
 }

@@ -15,7 +15,7 @@ class RecommendPage extends StatefulWidget {
   _RecommendPageState createState() => _RecommendPageState();
 }
 
-class _RecommendPageState extends State<RecommendPage> {
+class _RecommendPageState extends State<RecommendPage> with AutomaticKeepAliveClientMixin{
   RefreshController _refreshController;
 
   List<RoomInfoEntity> items = [];
@@ -54,7 +54,7 @@ class _RecommendPageState extends State<RecommendPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      margin: EdgeInsets.all(ScreenAdapter.width(10)),
+      margin: EdgeInsets.fromLTRB(ScreenAdapter.width(10),0,ScreenAdapter.width(10),0),
       child: SmartRefresher(
         enablePullDown: true,
         enablePullUp: false,
@@ -98,4 +98,8 @@ class _RecommendPageState extends State<RecommendPage> {
       ),
     ));
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

@@ -47,5 +47,28 @@ class StringRes {
   static String  mineFoot = "足迹";
   static String  mineSetting = "设置";
 
+  static String mineActive = "动态";
+  static String mineGift = "礼物";
+  static String mineFollow = "关注";
+  static String mineVisitor = "访客";
+
+  static String titleFind = "发现";
+
+  static String secretTreeHole = "神秘树洞";
+
+  static String secretTreeHoleDesc = "偶遇陌生人，听你所听，想你所想";
+
+  static String falseFaceMatching = "假面速配";
+  static String falseFaceMatchingDesc = "遇见未知";
+
+  static String yurDrawIGuess = "你画我猜";
+  static String yurDrawIGuessDesc = "敢画敢猜";
+
+  static String heartbeatsWerewolf = "心跳狼人";
+  static String heartbeatsWerewolfDesc = "烧脑推理";
+
+
+
+
 
 }

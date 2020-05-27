@@ -15,7 +15,7 @@ class VideoPage extends StatefulWidget {
   _VideoPageState createState() => _VideoPageState();
 }
 
-class _VideoPageState extends State<VideoPage> {
+class _VideoPageState extends State<VideoPage> with AutomaticKeepAliveClientMixin{
   RefreshController _refreshController;
 
   List<RoomInfoEntity> items = [];
@@ -98,4 +98,8 @@ class _VideoPageState extends State<VideoPage> {
       ),
     ));
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

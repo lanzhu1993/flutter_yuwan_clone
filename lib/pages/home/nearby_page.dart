@@ -16,7 +16,7 @@ class NearbyPage extends StatefulWidget {
   _NearbyPageState createState() => _NearbyPageState();
 }
 
-class _NearbyPageState extends State<NearbyPage> {
+class _NearbyPageState extends State<NearbyPage> with AutomaticKeepAliveClientMixin {
   RefreshController _refreshController;
 
   List<RoomInfoEntity> items = [];
@@ -99,4 +99,8 @@ class _NearbyPageState extends State<NearbyPage> {
           ),
         ));
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

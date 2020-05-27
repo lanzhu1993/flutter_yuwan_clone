@@ -14,8 +14,9 @@ class MineMenuWidget extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: ScreenAdapter.width(10)),
-        height: ScreenAdapter.height(42),
+        color: ColorRes.colorWhite,
+        padding: EdgeInsets.symmetric(horizontal: ScreenAdapter.width(10)),
+        height: ScreenAdapter.height(48),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,11 +44,11 @@ class MineMenuWidget extends StatelessWidget {
               textAlign: TextAlign.end,
               style: TextStyle(
                   color: ColorRes.colorNormal,
-                  fontSize: ScreenAdapter.size(14)),
+                  fontSize: ScreenAdapter.size(12)),
             ),
             Image.asset(
               "assets/images/common_option_arrow_icon.png",
-              width: ScreenAdapter.width(10),
+              width: ScreenAdapter.width(8),
             )
           ],
         ),

@@ -28,6 +28,7 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        elevation: 0,
         leading: IconButton(
           iconSize: ScreenAdapter.width(24),
           icon: Image.asset("assets/images/room_searching.png",

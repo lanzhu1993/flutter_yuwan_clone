@@ -11,16 +11,18 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage>
-    with AutomaticKeepAliveClientMixin {
+    with SingleTickerProviderStateMixin {
   int _tabIndex = 0;
   var _pageList;
   var tabImages;
+  PageController _controller;
 
   @override
   void initState() {
     super.initState();
     tabImages = getIndexImages();
     _pageList = getIndexPages();
+    _controller = PageController(initialPage: 0);
   }
 
   @override
@@ -30,7 +32,12 @@ class _IndexPageState extends State<IndexPage>
         value: SystemUiOverlayStyle.dark,
         child: Scaffold(
           backgroundColor: ColorRes.colorGrayBackground,
-          body: _pageList[_tabIndex],
+          body: PageView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              onPageChanged: _pageChange,
+              controller: _controller,
+              itemCount: _pageList.length,
+              itemBuilder: (context, index) => _pageList[index]),
           bottomNavigationBar: BottomNavigationBar(
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
@@ -50,12 +57,22 @@ class _IndexPageState extends State<IndexPage>
             iconSize: ScreenAdapter.width(24),
             //点击事件
             onTap: (index) {
-              setState(() {
-                _tabIndex = index;
-              });
+              onTap(index);
             },
           ),
         ));
+  }
+
+  void _pageChange(int index) {
+    if (index != _tabIndex) {
+      setState(() {
+        _tabIndex = index;
+      });
+    }
+  }
+
+  void onTap(int index) {
+    _controller.jumpToPage(index);
   }
 
   /*
@@ -85,4 +102,10 @@ class _IndexPageState extends State<IndexPage>
 
   @override
   bool get wantKeepAlive => true;
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
 }

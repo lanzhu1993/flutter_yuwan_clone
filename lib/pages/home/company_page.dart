@@ -15,7 +15,7 @@ class CompanyPage extends StatefulWidget {
   _CompanyPageState createState() => _CompanyPageState();
 }
 
-class _CompanyPageState extends State<CompanyPage> {
+class _CompanyPageState extends State<CompanyPage> with AutomaticKeepAliveClientMixin{
   RefreshController _refreshController;
 
   List<RoomInfoEntity> items = [];
@@ -98,4 +98,8 @@ class _CompanyPageState extends State<CompanyPage> {
           ),
         ));
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }
