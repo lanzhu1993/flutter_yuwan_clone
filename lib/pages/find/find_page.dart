@@ -74,6 +74,7 @@ class _FindPageState extends State<FindPage> {
   Widget _buildOneTab(String image, String title, String content) {
     return Container(
       height: ScreenAdapter.height(80),
+      width: ScreenAdapter.width(100),
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
@@ -109,7 +110,7 @@ class _FindPageState extends State<FindPage> {
   Widget _buildSecretTreeHole() {
     return Container(
       color: ColorRes.colorWhite,
-      height: ScreenAdapter.height(120),
+      height: ScreenAdapter.height(100),
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: ScreenAdapter.width(10)),
         child: Stack(
@@ -150,7 +151,7 @@ class _FindPageState extends State<FindPage> {
                 Container(),
                 Container(
                   width: ScreenAdapter.width(160),
-                  height: ScreenAdapter.height(200),
+                  height: ScreenAdapter.height(100),
                   child: SVGASampleScreen(
                       image:
                           "assets/svga/discover_match_game_single_motion.svga"),
@@ -171,7 +172,7 @@ class _FindPageState extends State<FindPage> {
 
   Widget _buildSwiperWidget() {
     return Container(
-      height: ScreenAdapter.height(48),
+      height: ScreenAdapter.height(44),
       color: ColorRes.colorWhite,
       child: Swiper(
         itemBuilder: (BuildContext context, int index) {

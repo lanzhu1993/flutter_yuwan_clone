@@ -25,7 +25,18 @@
 
 #### 房间模块UI：
 
-<img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot//room/room.jpg" width=200 height=450/>
+<img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/room/room.jpg" width=200 height=450/>
+
+
+#### 发现模块UI：
+
+<img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/find/find.jpg" width=200 height=450/>
+
+
+#### 我的模块UI：
+
+<img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/mine/mine.jpeg" width=200 height=450/>
+
 
 感觉有帮助的话就给个start吧，我会持续更新完善这个项目！
 
@@ -53,6 +64,8 @@ Tools • Dart 2.8.1
 [pull_to_refresh](https://pub.dev/packages/pull_to_refresh) |  下拉刷新  | 1.5.8
 [cached_network_image](https://pub.dev/packages?q=cached_network_image) |  网络缓存加载图片  | 2.2.0+1
 [flutter_staggered_grid_view](https://pub.dev/packages/flutter_staggered_grid_view) |  列表网格显示  | 1.1.0
+[flutter_swiper](https://pub.dev/packages/flutter_swiper) |  轮播Banner  | 1.1.6
+
 
 
 

@@ -15,7 +15,7 @@ class FindItemWidget extends StatelessWidget {
       child: Container(
         color: ColorRes.colorWhite,
         padding: EdgeInsets.symmetric(horizontal: ScreenAdapter.width(10)),
-        height: ScreenAdapter.height(48),
+        height: ScreenAdapter.height(44),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
