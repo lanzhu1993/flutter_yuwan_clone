@@ -21,5 +21,7 @@ class ColorRes{
 
   static Color colorBlackTransparent = Color(0x66000000);
 
+  static Color colorBlue =  Color(0xff46A3FF);
+
 
 }

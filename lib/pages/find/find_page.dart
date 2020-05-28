@@ -117,6 +117,7 @@ class _FindPageState extends State<FindPage> {
           children: <Widget>[
             Image.asset(
               "assets/images/discover_single_match_35.png",
+              width: ScreenAdapter.width(330),
               fit: BoxFit.fill,
             ),
             Column(

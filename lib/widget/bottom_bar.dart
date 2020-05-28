@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yuwan/pages/active/active_page.dart';
 import 'package:yuwan/pages/find/find_page.dart';
 import 'package:yuwan/pages/home/home_page.dart';
 import 'package:yuwan/pages/index/test_page.dart';
@@ -8,7 +9,7 @@ import 'package:yuwan/utils/screen_adapter.dart';
 List<Widget> getIndexPages() {
   var pages = [
     HomePage(),
-    TestPage(),
+    ActivePage(),
     FindPage(),
     TestPage(),
     MinePage(),
