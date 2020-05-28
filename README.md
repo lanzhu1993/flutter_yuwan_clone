@@ -27,10 +27,17 @@
 
 <img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/room/room.jpg" width=200 height=450/>
 
+#### 动态模块UI：
+
+<img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/active/active.jpeg" width=200 height=450/><img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/active/active_detail.jpeg" width=200 height=450/>
 
 #### 发现模块UI：
 
 <img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/find/find.jpg" width=200 height=450/>
+
+#### 消息模块UI：
+
+<img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/msg/msg.jpeg" width=200 height=450/><img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/msg/friend.jpg" width=200 height=450/>
 
 
 #### 我的模块UI：
@@ -65,6 +72,8 @@ Tools • Dart 2.8.1
 [cached_network_image](https://pub.dev/packages?q=cached_network_image) |  网络缓存加载图片  | 2.2.0+1
 [flutter_staggered_grid_view](https://pub.dev/packages/flutter_staggered_grid_view) |  列表网格显示  | 1.1.0
 [flutter_swiper](https://pub.dev/packages/flutter_swiper) |  轮播Banner  | 1.1.6
+[flutter_nineold](https://pub.dev/packages/nineold) |  图片九宫格  | 1.2.0
+
 
 
 

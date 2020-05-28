@@ -26,15 +26,15 @@ class _ActivePageState extends State<ActivePage>
         centerTitle: true,
         elevation: 0,
         leading: IconButton(
-          iconSize: ScreenAdapter.width(24),
+          iconSize: ScreenAdapter.width(22),
           icon: Image.asset("assets/images/room_searching.png",
-              width: ScreenAdapter.width(24)),
+              width: ScreenAdapter.width(22)),
           onPressed: () {},
         ),
         actions: <Widget>[
           IconButton(
             icon: Image.asset("assets/images/moment_send_moment.png",
-                width: ScreenAdapter.width(24)),
+                width: ScreenAdapter.width(22)),
             onPressed: () {},
           ),
         ],

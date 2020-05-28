@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:yuwan/pages/home/company_page.dart';
-import 'package:yuwan/pages/home/listen_page.dart';
-import 'package:yuwan/pages/home/nearby_page.dart';
-import 'package:yuwan/pages/home/recommend_page.dart';
-import 'package:yuwan/pages/home/video_page.dart';
+import 'package:yuwan/pages/msg/friend_page.dart';
+import 'package:yuwan/pages/msg/msg_page.dart';
 import 'package:yuwan/res/color_res.dart';
 import 'package:yuwan/utils/screen_adapter.dart';
 
-class HomePage extends StatefulWidget {
+class MessagePage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _MessagePageState createState() => _MessagePageState();
 }
 
-class _HomePageState extends State<HomePage>
+class _MessagePageState extends State<MessagePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: 5);
+    _tabController = TabController(vsync: this, length: 2);
   }
 
   @override
@@ -29,40 +26,23 @@ class _HomePageState extends State<HomePage>
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        leading: IconButton(
-          iconSize: ScreenAdapter.width(22),
-          icon: Image.asset("assets/images/room_searching.png",
-              width: ScreenAdapter.width(22)),
-          onPressed: () {},
-        ),
         actions: <Widget>[
           IconButton(
-            icon: Image.asset("assets/images/room_add_room.png",
-                width: ScreenAdapter.width(22)),
+            iconSize: ScreenAdapter.width(36),
+            icon: Image.asset("assets/images/icon_add_friends_circle.png",
+                width: ScreenAdapter.width(36)),
             onPressed: () {},
           ),
         ],
         title: _buildTabBar(),
-        flexibleSpace: FlexibleSpaceBar(
-          // 背景折叠动画
-          collapseMode: CollapseMode.parallax,
-        ),
       ),
       backgroundColor: ColorRes.colorGrayBackground,
       body: TabBarView(
         controller: _tabController,
-        children: <Widget>[
-          RecommendPage(),
-          VideoPage(),
-          ListenPage(),
-          CompanyPage(),
-          NearbyPage(),
-        ],
+        children: <Widget>[Msgpage(), FriendPage()],
       ),
     );
   }
-
-
 
   Widget _buildTabBar() {
     return Container(
@@ -82,13 +62,16 @@ class _HomePageState extends State<HomePage>
         indicatorPadding:
             EdgeInsets.symmetric(horizontal: ScreenAdapter.width(10)),
         tabs: <Widget>[
-          Tab(text: "推荐"),
-          Tab(text: "视频"),
-          Tab(text: "听歌"),
-          Tab(text: "陪伴"),
-          Tab(text: "附近"),
+          Tab(text: "消息"),
+          Tab(text: "好友"),
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _tabController.dispose();
   }
 }

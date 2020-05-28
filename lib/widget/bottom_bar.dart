@@ -4,6 +4,7 @@ import 'package:yuwan/pages/find/find_page.dart';
 import 'package:yuwan/pages/home/home_page.dart';
 import 'package:yuwan/pages/index/test_page.dart';
 import 'package:yuwan/pages/mine/mine_page.dart';
+import 'package:yuwan/pages/msg/message_page.dart';
 import 'package:yuwan/utils/screen_adapter.dart';
 
 List<Widget> getIndexPages() {
@@ -11,7 +12,7 @@ List<Widget> getIndexPages() {
     HomePage(),
     ActivePage(),
     FindPage(),
-    TestPage(),
+    MessagePage(),
     MinePage(),
   ];
   return pages;
