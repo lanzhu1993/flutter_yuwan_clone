@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:yuwan/entity/active_info_entity.dart';
+import 'package:yuwan/res/color_res.dart';
 import 'package:yuwan/res/string_res.dart';
 import 'package:yuwan/utils/screen_adapter.dart';
 import 'package:yuwan/widget/active_item.dart';
@@ -56,8 +57,7 @@ class _FocusPageState extends State<FocusPage>
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-          margin: EdgeInsets.fromLTRB(
-              ScreenAdapter.width(10), 0, ScreenAdapter.width(10), 0),
+          color: ColorRes.colorGrayBackground,
           child: SmartRefresher(
             enablePullDown: true,
             enablePullUp: false,

@@ -27,22 +27,68 @@ class _ActiveItemWidgetState extends State<ActiveItemWidget> {
   Widget build(BuildContext context) {
     return Container(
       color: ColorRes.colorWhite,
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(height: ScreenAdapter.height(10),),
-            _buildActiveUserInfo(widget.entity),
-            SizedBox(height: ScreenAdapter.height(10),),
-            Text(widget.entity.content,style: TextStyle(color: ColorRes.colorDark,fontSize: ScreenAdapter.size(14)),),
-            SizedBox(height: ScreenAdapter.height(10),),
-            Center(
-              child: NineOldWidget(
-                  widget.entity.images
-              ),
+      child: Column(
+        children: <Widget>[
+          Container(color: ColorRes.colorGrayBackground,height: ScreenAdapter.height(10),),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: ScreenAdapter.width(10)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(height: ScreenAdapter.height(10),),
+                _buildActiveUserInfo(widget.entity),
+                SizedBox(height: ScreenAdapter.height(10),),
+                Text(widget.entity.content,style: TextStyle(color: ColorRes.colorDark,fontSize: ScreenAdapter.size(14)),),
+                SizedBox(height: ScreenAdapter.height(10),),
+                NineOldWidget(
+                    images :widget.entity.images
+                ),
+                SizedBox(height: ScreenAdapter.height(10),),
+                Text("浏览${widget.entity.scanNum}次",style: TextStyle(color: ColorRes.colorNormal,fontSize: ScreenAdapter.size(10)),),
+                SizedBox(height: ScreenAdapter.height(10),),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Image.asset("assets/images/moment_details_share.png",width: ScreenAdapter.width(20),),
+                        Text("分享",style: TextStyle(color: ColorRes.colorNormal,fontSize: ScreenAdapter.size(12)),)
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Image.asset("assets/images/moment_comment.png",width: ScreenAdapter.width(20),),
+                        Text("评论",style: TextStyle(color: ColorRes.colorNormal,fontSize: ScreenAdapter.size(12)),)
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Image.asset("assets/images/moment_reward_no.png",width: ScreenAdapter.width(20),),
+                        Text(widget.entity.giftNum > 0 ? widget.entity.giftNum.toString(): "送花" ,style: TextStyle(color: ColorRes.colorNormal,fontSize: ScreenAdapter.size(12)),)
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Image.asset("assets/images/moment_like_no.png",width: ScreenAdapter.width(20),),
+                        Text(widget.entity.praiseNum.toString(),style: TextStyle(color: ColorRes.colorNormal,fontSize: ScreenAdapter.size(12)),)
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(height: ScreenAdapter.height(10),),
+              ],
             ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
@@ -57,79 +103,91 @@ class _ActiveItemWidgetState extends State<ActiveItemWidget> {
           backgroundImage: NetworkImage(info.userAvatar),
           radius: ScreenAdapter.width(20),
         ),
-        Container(
-          margin: EdgeInsets.only(left: ScreenAdapter.width(5)),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    info.userName,
-                    style: TextStyle(
-                        color: ColorRes.colorDark,
-                        fontSize: ScreenAdapter.size(14),
-                        fontWeight: FontWeight.bold),
-                  ),
-                  _buildUserGradeImage()
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  info.gender == 1
-                      ? Image.asset(
-                          "assets/images/friend_gender_male.png",
-                          width: ScreenAdapter.width(8),
-                        )
-                      : Image.asset(
-                          "assets/images/friend_gender_female.png",
-                          width: ScreenAdapter.width(8),
-                        ),
-                  Text(
-                    info.age.toString(),
-                    style: TextStyle(
-                        fontSize: ScreenAdapter.size(10),
-                        color: info.gender == 1
-                            ? ColorRes.colorBlue
-                            : ColorRes.colorPink),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: ScreenAdapter.width(10)),
-                    child: Text(
-                        getDiffrentTime(entity.createTime),
-                        style: TextStyle(
-                          color: ColorRes.colorNormal,
-                          fontSize: ScreenAdapter.size(11),
-                        )
+        Expanded(
+          flex: 1,
+          child: Container(
+            margin: EdgeInsets.only(left: ScreenAdapter.width(5)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      info.userName,
+                      style: TextStyle(
+                          color: ColorRes.colorDark,
+                          fontSize: ScreenAdapter.size(14),
+                          fontWeight: FontWeight.bold),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: ScreenAdapter.width(10)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Image.asset(
-                          "assets/images/rank_location.png",
-                          width: ScreenAdapter.width(8),
-                        ),
-                        Text(
-                          info.city,
+                    _buildUserGradeImage()
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    info.gender == 1
+                        ? Image.asset(
+                      "assets/images/friend_gender_male.png",
+                      width: ScreenAdapter.width(8),
+                    )
+                        : Image.asset(
+                      "assets/images/friend_gender_female.png",
+                      width: ScreenAdapter.width(8),
+                    ),
+                    Text(
+                      info.age.toString(),
+                      style: TextStyle(
+                          fontSize: ScreenAdapter.size(10),
+                          color: info.gender == 1
+                              ? ColorRes.colorBlue
+                              : ColorRes.colorPink),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: ScreenAdapter.width(10)),
+                      child: Text(
+                          getDiffrentTime(entity.createTime),
                           style: TextStyle(
                             color: ColorRes.colorNormal,
                             fontSize: ScreenAdapter.size(11),
-                          ),
-                        )
-                      ],
+                          )
+                      ),
                     ),
-                  )
-                ],
-              )
-            ],
+                    Container(
+                      margin: EdgeInsets.only(left: ScreenAdapter.width(10)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Image.asset(
+                            "assets/images/rank_location.png",
+                            width: ScreenAdapter.width(8),
+                          ),
+                          Text(
+                            info.city,
+                            style: TextStyle(
+                              color: ColorRes.colorNormal,
+                              fontSize: ScreenAdapter.size(11),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-        )
+        ),
+        Container(
+            decoration: new BoxDecoration(
+                border: new Border.all(color: ColorRes.colorPink, width: ScreenAdapter.width(1)),
+                borderRadius: new BorderRadius.circular(ScreenAdapter.width(15))),
+            height: ScreenAdapter.height(26),
+            width: ScreenAdapter.width(60),
+            alignment: Alignment.center,
+            child: Text('+ 关注',style: TextStyle(color: ColorRes.colorPink,fontSize: ScreenAdapter.size(12)),))
+
       ],
     );
   }
