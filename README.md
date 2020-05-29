@@ -5,6 +5,12 @@
 **声明：此项目只是纯Flutter UI交互用于交流学习，不得用于商业用途，如有侵权，请联系作者及时关闭**
 
 
+### 项目演示
+
+<img src="https://github.com/GZFlutterInc/flutter_yuwan_clone/blob/master/screenshot/video.gif" style="width: 300px"/>
+
+
+
 ### 模块介绍
 
 目前分为：房间、动态、发现、消息、我的五大模块
