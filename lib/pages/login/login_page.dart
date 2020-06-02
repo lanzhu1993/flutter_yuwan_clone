@@ -1,3 +1,4 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:yuwan/res/color_res.dart';
@@ -5,9 +6,9 @@ import 'package:yuwan/res/string_res.dart';
 import 'package:yuwan/routers/navigator.dart';
 import 'package:yuwan/routers/routes.dart';
 import 'package:yuwan/utils/screen_adapter.dart';
+import 'package:yuwan/widget/menu_button.dart';
 import 'package:yuwan/widget/privacy_widget.dart';
 import 'package:yuwan/widget/svga_widget.dart';
-import 'package:yuwan/widget/menu_button.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -23,6 +24,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
+    AssetsAudioPlayer.newPlayer()..loop = true..open(Audio("assets/audios/call_ringback.ogg"),
+        autoStart: true, showNotification: false, respectSilentMode: false);
   }
 
   @override
@@ -178,7 +181,7 @@ class _LoginPageState extends State<LoginPage> {
       enable: _mLoginEnable,
       gradientStart: ColorRes.colorStart,
       gradientEnd: ColorRes.colorEnd,
-      onPressed: (){
+      onPressed: () {
         NavigatorUtil.replaceJumpUrl(context, Routers.indexPage);
       },
     );
