@@ -1,28 +1,79 @@
 PODS:
   - assets_audio_player (0.0.1):
     - Flutter
+  - assets_audio_player_web (0.0.1):
+    - Flutter
   - Flutter (1.0.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - nineold (0.0.1):
+    - Flutter
+  - path_provider (0.0.1):
+    - Flutter
+  - path_provider_linux (0.0.1):
+    - Flutter
+  - path_provider_macos (0.0.1):
+    - Flutter
+  - path_provider_windows (0.0.1):
+    - Flutter
+  - sqflite (0.0.2):
+    - Flutter
+    - FMDB (>= 2.7.5)
   - svgaplayer_flutter (0.0.1):
     - Flutter
 
 DEPENDENCIES:
   - assets_audio_player (from `.symlinks/plugins/assets_audio_player/ios`)
+  - assets_audio_player_web (from `.symlinks/plugins/assets_audio_player_web/ios`)
   - Flutter (from `Flutter`)
+  - nineold (from `.symlinks/plugins/nineold/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - path_provider_linux (from `.symlinks/plugins/path_provider_linux/ios`)
+  - path_provider_macos (from `.symlinks/plugins/path_provider_macos/ios`)
+  - path_provider_windows (from `.symlinks/plugins/path_provider_windows/ios`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
   - svgaplayer_flutter (from `.symlinks/plugins/svgaplayer_flutter/ios`)
+
+SPEC REPOS:
+  trunk:
+    - FMDB
 
 EXTERNAL SOURCES:
   assets_audio_player:
     :path: ".symlinks/plugins/assets_audio_player/ios"
+  assets_audio_player_web:
+    :path: ".symlinks/plugins/assets_audio_player_web/ios"
   Flutter:
     :path: Flutter
+  nineold:
+    :path: ".symlinks/plugins/nineold/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
+  path_provider_linux:
+    :path: ".symlinks/plugins/path_provider_linux/ios"
+  path_provider_macos:
+    :path: ".symlinks/plugins/path_provider_macos/ios"
+  path_provider_windows:
+    :path: ".symlinks/plugins/path_provider_windows/ios"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
   svgaplayer_flutter:
     :path: ".symlinks/plugins/svgaplayer_flutter/ios"
 
 SPEC CHECKSUMS:
-  assets_audio_player: 828c5761d1e51c569f40e622db3a2cbfd61ecb7d
+  assets_audio_player: edee322b9cb625571b830b35872ead1a295fd917
+  assets_audio_player_web: 19826380c44375761aa0b9053665c1e3fbc3b86b
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  nineold: d0d68a3226a2b819ab0c25617ec667fec71797dd
+  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  path_provider_linux: 4d630dc393e1f20364f3e3b4a2ff41d9674a84e4
+  path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
+  path_provider_windows: a2b81600c677ac1959367280991971cb9a1edb3b
+  sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
   svgaplayer_flutter: 54a6973be40a849244ba02fdffcba9094f10f68f
 
-PODFILE CHECKSUM: c34e2287a9ccaa606aeceab922830efb9a6ff69a
+PODFILE CHECKSUM: 2609452b760cd11039b14039a86564367a3d8ab9
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3
