@@ -21,10 +21,12 @@ class _LoginPageState extends State<LoginPage> {
 
   bool _mLoginEnable = false;
 
+  AssetsAudioPlayer _audioPlayer;
+
   @override
   void initState() {
     super.initState();
-    AssetsAudioPlayer.newPlayer()..open(Audio("assets/audios/call_ringback.ogg"),
+    _audioPlayer = AssetsAudioPlayer.newPlayer()..open(Audio("assets/audios/call_ringback.ogg"),
         autoStart: true, showNotification: false, respectSilentMode: false,loopMode: LoopMode.playlist);
   }
 
@@ -197,5 +199,11 @@ class _LoginPageState extends State<LoginPage> {
         });
       },
     );
+  }
+
+  @override
+  void dispose() {
+    _audioPlayer.stop();
+    super.dispose();
   }
 }
