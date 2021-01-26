@@ -13,7 +13,6 @@ class _FriendPageState extends State<FriendPage>
     with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
-    ScreenAdapter.init(context);
     return Scaffold(
       backgroundColor: ColorRes.colorWhite,
       body: ListView(

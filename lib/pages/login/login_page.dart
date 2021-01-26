@@ -24,13 +24,12 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    AssetsAudioPlayer.newPlayer()..loop = true..open(Audio("assets/audios/call_ringback.ogg"),
-        autoStart: true, showNotification: false, respectSilentMode: false);
+    AssetsAudioPlayer.newPlayer()..open(Audio("assets/audios/call_ringback.ogg"),
+        autoStart: true, showNotification: false, respectSilentMode: false,loopMode: LoopMode.playlist);
   }
 
   @override
   Widget build(BuildContext context) {
-    ScreenAdapter.init(context);
     return AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.dark,
         child: Scaffold(

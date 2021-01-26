@@ -1,10 +1,8 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 
 class ScreenAdapter {
   /// 初始化屏幕适配
-  static init(context) {
-    ScreenUtil.init(context, width: 350, height: 675);
-  }
 
   static height(double value) {
     return ScreenUtil().setHeight(value);
@@ -15,19 +13,11 @@ class ScreenAdapter {
   }
 
   static getScreenHeight() {
-    return ScreenUtil.screenHeightDp;
+    return ScreenUtil().screenHeight;
   }
 
   static getScreenWidth() {
-    return ScreenUtil.screenWidthDp;
-  }
-
-  static getScreenPxHeight() {
-    return ScreenUtil.screenHeight;
-  }
-
-  static getScreenPxWidth() {
-    return ScreenUtil.screenWidth;
+    return ScreenUtil().screenHeight;
   }
 
   static size(double value) {

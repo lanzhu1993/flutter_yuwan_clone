@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yuwan/utils/screen_adapter.dart';
-
 import 'package:yuwan/res/color_res.dart';
 import 'package:yuwan/utils/screen_adapter.dart';
 
@@ -33,22 +31,24 @@ class _GradientMenuButtonState extends State<GradientMenuButton> {
         height: ScreenAdapter.height(46),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(ScreenAdapter.height(25)),
-            gradient: LinearGradient(colors: <Color>[
-              !widget.enable || widget.gradientStart == null
-                  ? ColorRes.colorNormal
-                  : widget.gradientStart,
-              !widget.enable || widget.gradientEnd == null
-                  ? ColorRes.colorNormal
-                  : widget.gradientEnd,
-            ], begin: Alignment.topCenter, end: Alignment.bottomRight)),
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomRight,
+                colors: [
+                  !widget.enable || widget.gradientStart == null
+                      ? ColorRes.colorNormal
+                      : widget.gradientStart,
+                  !widget.enable || widget.gradientEnd == null
+                      ? ColorRes.colorNormal
+                      : widget.gradientEnd,
+                ])),
         child: Container(
           width: ScreenAdapter.width(270),
           alignment: Alignment.center,
           child: Text(
             widget.label,
             style: TextStyle(
-                color: ColorRes.colorWhite,
-                fontSize: ScreenAdapter.size(18)),
+                color: ColorRes.colorWhite, fontSize: ScreenAdapter.size(18)),
           ),
         ),
       ),

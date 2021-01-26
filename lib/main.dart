@@ -4,6 +4,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:yuwan/pages/login/login_page.dart';
 import 'package:yuwan/res/color_res.dart';
@@ -35,34 +36,36 @@ void initSystemUiOverlayStyle() {
 class YuWanApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final router = Router();
+    final router = FluroRouter();
     Routers.configureRoutes(router);
     Application.router = router;
-
-    return OKToast(
-        child: MaterialApp(
-          navigatorKey: Routers.navigatorKey,
-          title: "",
-          theme: ThemeData(primaryColor: Colors.white),
-          onGenerateRoute: Application.router.generator,
-          home: LoginPage(),
-          debugShowCheckedModeBanner: false,
-          //去除右上角Debug标签
-          localizationsDelegates: const [
-            //国际化g
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-            const LocalDelegate(),
-          ],
-          locale: const Locale("en", "US"),
-          supportedLocales:
-              Platform.isIOS ? LanguageConfig.ios : LanguageConfig.android,
-        ),
-        backgroundColor: Colors.black54,
-        textPadding:
-            const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
-        radius: 20.0,
-        position: ToastPosition.bottom);
+    return ScreenUtilInit(
+        designSize: Size(350, 675),
+        allowFontScaling: true,
+        child: OKToast(
+            child: MaterialApp(
+              navigatorKey: Routers.navigatorKey,
+              title: "",
+              theme: ThemeData(primaryColor: Colors.white),
+              onGenerateRoute: Application.router.generator,
+              home: LoginPage(),
+              debugShowCheckedModeBanner: false,
+              //去除右上角Debug标签
+              localizationsDelegates: const [
+                //国际化g
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+                const LocalDelegate(),
+              ],
+              locale: const Locale("en", "US"),
+              supportedLocales:
+                  Platform.isIOS ? LanguageConfig.ios : LanguageConfig.android,
+            ),
+            backgroundColor: Colors.black54,
+            textPadding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+            radius: 20.0,
+            position: ToastPosition.bottom));
   }
 }

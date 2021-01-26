@@ -1,4 +1,8 @@
-String getDiffrentTime(int time) {
+
+
+
+
+String getDifferentTime(int time) {
   int min = (DateTime.now().millisecondsSinceEpoch - (time*1000))~/ (1000*60);
   print("min is : $min");
   if (min < 60) {

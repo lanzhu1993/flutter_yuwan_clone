@@ -37,7 +37,7 @@ class _VerificationBoxCursorState extends State<VerificationBoxCursor>
   @override
   void initState() {
     _controller =
-    AnimationController(duration: Duration(milliseconds: 500), vsync: this)
+    AnimationController(duration: Duration(milliseconds: 500),vsync:this)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           _controller.reverse();

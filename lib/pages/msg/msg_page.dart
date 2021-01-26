@@ -10,7 +10,6 @@ class Msgpage extends StatefulWidget {
 class _MsgpageState extends State<Msgpage> with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
-    ScreenAdapter.init(context);
     return Scaffold(
       backgroundColor: ColorRes.colorWhite,
       body: ListView(

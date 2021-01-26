@@ -15,7 +15,6 @@ class FindPage extends StatefulWidget {
 class _FindPageState extends State<FindPage> {
   @override
   Widget build(BuildContext context) {
-    ScreenAdapter.init(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

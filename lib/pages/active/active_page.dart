@@ -20,7 +20,6 @@ class _ActivePageState extends State<ActivePage>
 
   @override
   Widget build(BuildContext context) {
-    ScreenAdapter.init(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

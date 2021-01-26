@@ -57,10 +57,10 @@
 ### 基础环境
 
 ```
-Flutter 1.17.0 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision e6b34c2b5c (3 周前) • 2020-05-02 11:39:18 -0700
-Engine • revision 540786dd51
-Tools • Dart 2.8.1
+Flutter 1.22.6 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 9b2d32b605 (3 days ago) • 2021-01-22 14:36:39 -0800
+Engine • revision 2f0af37152
+Tools • Dart 2.10.5
 ```
 
 
@@ -69,16 +69,16 @@ Tools • Dart 2.8.1
 
 插件名称  | 描述 | 版本
 ---|---|---
-[assets_audio_player](https://pub.dev/packages/assets_audio_player) |  音频播放  | 1.6.0
-[fluro](https://pub.dev/packages/fluro) |  路由管理  | 1.6.3
+[assets_audio_player](https://pub.dev/packages/assets_audio_player) |  音频播放  | 2.0.13
+[fluro](https://pub.dev/packages/fluro) |  路由管理  | 1.7.8
 [oktoast](https://pub.dev/packages/oktoast) |  弹窗提示  | 2.3.2
-[flutter_screenutil](https://pub.dev/packages/flutter_screenutil) |  屏幕适配  | 1.1.0
+[flutter_screenutil](https://pub.dev/packages/flutter_screenutil) |  屏幕适配  | 4.0.2+3
 [svgaplayer_flutter](https://pub.dev/packages/svgaplayer_flutter) |  svga动画播放  | 1.1.0
-[pull_to_refresh](https://pub.dev/packages/pull_to_refresh) |  下拉刷新  | 1.5.8
-[cached_network_image](https://pub.dev/packages?q=cached_network_image) |  网络缓存加载图片  | 2.2.0+1
-[flutter_staggered_grid_view](https://pub.dev/packages/flutter_staggered_grid_view) |  列表网格显示  | 1.1.0
+[pull_to_refresh](https://pub.dev/packages/pull_to_refresh) |  下拉刷新  | 1.6.3
+[cached_network_image](https://pub.dev/packages?q=cached_network_image) |  网络缓存加载图片  | 2.5.0
+[flutter_staggered_grid_view](https://pub.dev/packages/flutter_staggered_grid_view) |  列表网格显示  | 0.3.2
 [flutter_swiper](https://pub.dev/packages/flutter_swiper) |  轮播Banner  | 1.1.6
-[flutter_nineold](https://pub.dev/packages/nineold) |  图片九宫格  | 1.2.0
+[flutter_nineold](https://pub.dev/packages/nineold) |  图片九宫格  | 1.3.4
 
 
 

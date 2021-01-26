@@ -15,7 +15,6 @@ class _PrivacyWidgetState extends State<PrivacyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenAdapter.init(context);
     return Container(
       margin: EdgeInsets.fromLTRB(ScreenAdapter.width(60),
           ScreenAdapter.width(10), ScreenAdapter.width(60), 0),

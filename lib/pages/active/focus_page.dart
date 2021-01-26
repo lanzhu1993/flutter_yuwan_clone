@@ -7,7 +7,6 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:yuwan/entity/active_info_entity.dart';
 import 'package:yuwan/res/color_res.dart';
 import 'package:yuwan/res/string_res.dart';
-import 'package:yuwan/utils/screen_adapter.dart';
 import 'package:yuwan/widget/active_item.dart';
 
 

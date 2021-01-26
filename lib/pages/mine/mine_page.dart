@@ -14,7 +14,6 @@ class MinePage extends StatefulWidget {
 class _MinePageState extends State<MinePage> {
   @override
   Widget build(BuildContext context) {
-    ScreenAdapter.init(context);
     return AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.dark,
         child: Scaffold(

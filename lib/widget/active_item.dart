@@ -21,7 +21,7 @@ class _ActiveItemWidgetState extends State<ActiveItemWidget> {
   @override
   void initState() {
     super.initState();
-    getDiffrentTime(widget.entity.createTime);
+    getDifferentTime(widget.entity.createTime);
   }
   @override
   Widget build(BuildContext context) {
@@ -146,7 +146,7 @@ class _ActiveItemWidgetState extends State<ActiveItemWidget> {
                     Container(
                       margin: EdgeInsets.only(left: ScreenAdapter.width(10)),
                       child: Text(
-                          getDiffrentTime(entity.createTime),
+                          getDifferentTime(entity.createTime),
                           style: TextStyle(
                             color: ColorRes.colorNormal,
                             fontSize: ScreenAdapter.size(11),
